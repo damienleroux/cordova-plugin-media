@@ -25,8 +25,11 @@ description: Record and play audio on the device.
 |:-:|:-:|
 |[![Build status](https://ci.appveyor.com/api/projects/status/github/apache/cordova-plugin-media?branch=master)](https://ci.appveyor.com/project/ApacheSoftwareFoundation/cordova-plugin-media)|[![Build Status](https://travis-ci.org/apache/cordova-plugin-media.svg?branch=master)](https://travis-ci.org/apache/cordova-plugin-media)|
 
+
 # cordova-plugin-media
 
+NB: This repository is a simple for including some a the PR that fix IOS bugs:
+- [CB-7684: (iOS) Fix CDVSound killing all audio when a single file finishes](https://github.com/apache/cordova-plugin-media/pull/100/commits)
 
 This plugin provides the ability to record and play back audio files on a device.
 
