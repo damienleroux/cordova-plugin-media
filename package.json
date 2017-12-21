@@ -1,6 +1,6 @@
 {
-  "name": "cordova-plugin-media",
-  "version": "5.0.1-dev",
+  "name": "cordova-plugin-media-with-fix",
+  "version": "5.0.1-dev-updated-with-fix",
   "description": "Cordova Media Plugin",
   "types": "./types/index.d.ts",
   "cordova": {
