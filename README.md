@@ -6,13 +6,13 @@ NB: This repository is a simple for including some a the PR that fix IOS bugs:
 Install this version with:
 
 ```
-npm i cordova-plugin-media-with-fix
+npm i cordova-plugin-media-with-fix@5.0.1-dev-updated-with-fix-2
 ```
 
 or:
 
 ```
-cordova add cordova-plugin-media-with-fix
+cordova add cordova-plugin-media-with-fix@5.0.1-dev-updated-with-fix-2
 ```
 
 Here is the original repository readme:
