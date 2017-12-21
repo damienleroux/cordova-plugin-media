@@ -21,8 +21,8 @@
 
 /*global Windows:true */
 
-var Media = require('cordova-plugin-media.Media');
-var MediaError = require('cordova-plugin-media.MediaError');
+var Media = require('cordova-plugin-media-with-fix.Media');
+var MediaError = require('cordova-plugin-media-with-fix.MediaError');
 
 var recordedFile;
 var tempFolderAppDataBasePath = 'ms-appdata:///temp/',
@@ -40,10 +40,10 @@ var fsTypes = {
 };
 
 module.exports = {
-    mediaCaptureMrg:null,
+    mediaCaptureMrg: null,
 
     // Initiates the audio file
-    create:function(win, lose, args) {
+    create: function (win, lose, args) {
         var id = args[0];
 
         var srcUri = processUri(args[1]);
@@ -104,7 +104,7 @@ module.exports = {
     },
 
     // Start playing the audio
-    startPlayingAudio:function(win, lose, args) {
+    startPlayingAudio: function (win, lose, args) {
         var id = args[0];
         //var src = args[1];
         //var options = args[2];
@@ -124,13 +124,13 @@ module.exports = {
             thisM.node.play();
         } catch (err) {
             if (lose) {
-                lose({code:MediaError.MEDIA_ERR_ABORTED});
+                lose({ code: MediaError.MEDIA_ERR_ABORTED });
             }
         }
     },
 
     // Stops the playing audio
-    stopPlayingAudio:function(win, lose, args) {
+    stopPlayingAudio: function (win, lose, args) {
         var id = args[0];
         try {
             var thisM = Media.get(id);
@@ -138,12 +138,12 @@ module.exports = {
             thisM.node.currentTime = 0;
             Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_STOPPED);
         } catch (err) {
-            lose("Failed to stop: "+err);
+            lose("Failed to stop: " + err);
         }
     },
 
     // Seeks to the position in the audio
-    seekToAudio:function(win, lose, args) {
+    seekToAudio: function (win, lose, args) {
         var id = args[0];
         var milliseconds = args[1];
         var thisM = Media.get(id);
@@ -151,24 +151,24 @@ module.exports = {
             thisM.node.currentTime = milliseconds / 1000;
             win(thisM.node.currentTime);
         } catch (err) {
-            lose("Failed to seek: "+err);
+            lose("Failed to seek: " + err);
         }
     },
 
     // Pauses the playing audio
-    pausePlayingAudio:function(win, lose, args) {
+    pausePlayingAudio: function (win, lose, args) {
         var id = args[0];
         var thisM = Media.get(id);
         try {
             thisM.node.pause();
             Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_PAUSED);
         } catch (err) {
-            lose("Failed to pause: "+err);
+            lose("Failed to pause: " + err);
         }
     },
 
     // Gets current position in the audio
-    getCurrentPositionAudio:function(win, lose, args) {
+    getCurrentPositionAudio: function (win, lose, args) {
         var id = args[0];
         try {
             var p = (Media.get(id)).node.currentTime;
@@ -179,7 +179,7 @@ module.exports = {
     },
 
     // Start recording audio
-    startRecordingAudio:function(win, lose, args) {
+    startRecordingAudio: function (win, lose, args) {
         var id = args[0];
         var srcUri = processUri(args[1]);
 
@@ -230,7 +230,7 @@ module.exports = {
     },
 
     // Stop recording audio
-    stopRecordingAudio:function(win, lose, args) {
+    stopRecordingAudio: function (win, lose, args) {
         var id = args[0];
         var thisM = Media.get(id);
         var srcUri = processUri(thisM.src);
@@ -272,7 +272,7 @@ module.exports = {
     },
 
     // Release the media object
-    release:function(win, lose, args) {
+    release: function (win, lose, args) {
         var id = args[0];
         var thisM = Media.get(id);
         try {
@@ -285,10 +285,10 @@ module.exports = {
                 delete thisM.node;
             }
         } catch (err) {
-            lose("Failed to release: "+err);
+            lose("Failed to release: " + err);
         }
     },
-    setVolume:function(win, lose, args) {
+    setVolume: function (win, lose, args) {
         var id = args[0];
         var volume = args[1];
         var thisM = Media.get(id);
@@ -407,4 +407,4 @@ function parseUriToPathAndFilename(uri) {
     };
 }
 
-require("cordova/exec/proxy").add("Media",module.exports);
+require("cordova/exec/proxy").add("Media", module.exports);

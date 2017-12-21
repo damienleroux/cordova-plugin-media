@@ -2,6 +2,19 @@
 NB: This repository is a simple for including some a the PR that fix IOS bugs:
 - [CB-7684: (iOS) Fix CDVSound killing all audio when a single file finishes](https://github.com/apache/cordova-plugin-media/pull/100/commits)
 - [CB-11513: (ios) Fixed: iOS memory warning stops sound, but does not send status to JS-client](https://github.com/apache/cordova-plugin-media/pull/120)
+
+Install this version with:
+
+```
+npm i cordova-plugin-media-with-fix
+```
+
+or:
+
+```
+cordova add cordova-plugin-media-with-fix
+```
+
 Here is the original repository readme:
 
 ---
