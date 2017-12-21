@@ -1,3 +1,9 @@
+
+NB: This repository is a simple for including some a the PR that fix IOS bugs:
+- [CB-7684: (iOS) Fix CDVSound killing all audio when a single file finishes](https://github.com/apache/cordova-plugin-media/pull/100/commits)
+- [CB-11513: (ios) Fixed: iOS memory warning stops sound, but does not send status to JS-client](https://github.com/apache/cordova-plugin-media/pull/120)
+Here is the original repository readme:
+
 ---
 title: Media
 description: Record and play audio on the device.
@@ -27,9 +33,6 @@ description: Record and play audio on the device.
 
 
 # cordova-plugin-media
-
-NB: This repository is a simple for including some a the PR that fix IOS bugs:
-- [CB-7684: (iOS) Fix CDVSound killing all audio when a single file finishes](https://github.com/apache/cordova-plugin-media/pull/100/commits)
 
 This plugin provides the ability to record and play back audio files on a device.
 
